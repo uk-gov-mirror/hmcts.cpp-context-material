@@ -31,7 +31,6 @@ pool:
 variables:
   sonarqubeProject: "uk.gov.moj.cpp.material:material-parent"
   service_Name: 'material'
-  docker_build_image: true # build and push the material-service Docker image on team/main builds
   itTest_Folder: 'material-integration-test'
 
 stages:
@@ -49,5 +48,3 @@ stages:
           serviceName: ${{ variables['service_Name'] }}
           itTestFolder: ${{ variables['itTest_Folder'] }}
           aksDeployBranch: 'wildfly40'
-          dockerfilePath: docker/Dockerfile_material-service
-          repository: hmcts/material-service
